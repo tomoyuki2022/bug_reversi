@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'debug'
 require_relative './position'
 
 WHITE_STONE = 1
@@ -94,7 +95,7 @@ def placeable?(board, attack_stone_color)
       return true if put_stone!(board, position.to_cellstr, attack_stone_color, false)
     end
   end
-  return false if board.include?(BLANK_CELL)
+  false
 end
 
 def count_stone(board, stone_color)
